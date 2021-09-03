@@ -1,0 +1,27 @@
+{
+  "name": "fingl",
+  "version": "1.0.0",
+  "description": "FinGL - Sistema para controle de contas a pagar e receber",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunzgabriel/fingl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kunzgabriel/fingl/issues"
+  },
+  "homepage": "https://github.com/kunzgabriel/fingl#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
