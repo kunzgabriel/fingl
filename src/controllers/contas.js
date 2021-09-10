@@ -1,8 +1,8 @@
-let clientesService = require('../services/clientes');
+let contasService = require('../services/contas');
 
-const postClientes = async (req, res, next) => {
+const postContas = async (req, res, next) => {
     try {
-        await clientesService.postClientes(req.body)
+        await contasService.postContas(req.body)
             .then(ret => res.status(201).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -10,9 +10,9 @@ const postClientes = async (req, res, next) => {
     }
 }
 
-const getAllClientes = async (req, res, next) => {
+const getAllContas = async (req, res, next) => {
     try {
-        await clientesService.getAllClientes()
+        await contasService.getAllContas()
             .then(ret => res.status(200).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -20,9 +20,9 @@ const getAllClientes = async (req, res, next) => {
     }
 }
 
-const getClienteById = async (req, res, next) => {
+const getContaById = async (req, res, next) => {
     try {
-        await clientesService.getClienteById(req.params)
+        await contasService.getContaById(req.params)
             .then(ret => res.status(200).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -30,9 +30,9 @@ const getClienteById = async (req, res, next) => {
     }
 }
 
-const patchCliente = async (req, res, next) => {
+const patchConta = async (req, res, next) => {
     try {
-        await clientesService.patchCliente(req.body)
+        await contasService.patchConta(req.body)
             .then(ret => res.status(201).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -40,9 +40,9 @@ const patchCliente = async (req, res, next) => {
     }
 }
 
-const deleteCliente = async (req, res, next) => {
+const deleteConta = async (req, res, next) => {
     try {
-        await clientesService.deleteCliente(req.params)
+        await contasService.deleteConta(req.params)
             .then(ret => res.status(204).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -50,8 +50,8 @@ const deleteCliente = async (req, res, next) => {
     }
 }
 
-module.exports.getAllClientes = getAllClientes;
-module.exports.postClientes = postClientes;
-module.exports.patchCliente = patchCliente;
-module.exports.deleteCliente = deleteCliente;
-module.exports.getClienteById = getClienteById;
+module.exports.getAllContas = getAllContas;
+module.exports.postContas = postContas;
+module.exports.patchConta = patchConta;
+module.exports.deleteConta = deleteConta;
+module.exports.getContaById = getContaById;
