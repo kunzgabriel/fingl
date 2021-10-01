@@ -18,7 +18,7 @@ module.exports = (app) => {
     app.post('/tabelaContabil', tabelaContabilController.postTabelaContabil
         //#region FinGL
         /*  #swagger.tags = ['Tabelas Contábeis']
-            #swagger.summary = 'Cria novas tabelas contábeis com base na estrutura passada no body.'
+            #swagger.summary = 'Cria novas tabelas contábeis com base na estrutura passada no body. As contas devem ser criadas previamente na rota de Contas, pois são chave estrangeira.'
             #swagger.parameters['json'] = {
                 in: 'body',
                 description: 'Body de exemplo',

@@ -550,7 +550,7 @@
         "tags": [
           "Tabelas Contábeis"
         ],
-        "summary": "Cria novas tabelas contábeis com base na estrutura passada no body.",
+        "summary": "Cria novas tabelas contábeis com base na estrutura passada no body. As contas devem ser criadas previamente na rota de Contas, pois são chave estrangeira.",
         "description": "",
         "parameters": [
           {
@@ -567,11 +567,11 @@
                     "type": "string",
                     "example": "Transferencia Sicoob para Caixa"
                   },
-                  "contaCredito": {
+                  "conta_credito": {
                     "type": "number",
                     "example": 2
                   },
-                  "contaDebito": {
+                  "conta_debito": {
                     "type": "number",
                     "example": 1
                   }
@@ -695,7 +695,7 @@
         "tags": [
           "Títulos"
         ],
-        "summary": "Cria novos títulos com base na estrutura passada no body.",
+        "summary": "Cria novos títulos com base na estrutura passada no body. Tabela contábil, cliente e fornecedor são chave estrangeira, devem ser criadas antes.",
         "description": "",
         "parameters": [
           {
@@ -725,8 +725,8 @@
                     "example": 1
                   },
                   "fornecedor": {
-                    "type": "string",
-                    "example": ""
+                    "type": "number",
+                    "example": 1
                   },
                   "emissao": {
                     "type": "string",
@@ -742,11 +742,11 @@
                   },
                   "pagamento": {
                     "type": "string",
-                    "example": ""
+                    "example": "2020-02-10"
                   },
                   "valor_pago": {
-                    "type": "string",
-                    "example": ""
+                    "type": "number",
+                    "example": 150
                   },
                   "observacao": {
                     "type": "string",
@@ -880,7 +880,7 @@
         "tags": [
           "Lançamentos dos Títulos"
         ],
-        "summary": "Cria novos lançamentos de título com base na estrutura passada no body.",
+        "summary": "Cria novos lançamentos de título com base na estrutura passada no body. Titulo e tabela contábil são chaves estrangeiras, devem ser criadas antes.",
         "description": "",
         "parameters": [
           {

@@ -18,7 +18,7 @@ module.exports = (app) => {
     app.post('/titulosLancamentos', titulosLancamentosController.postTitulosLancamentos
         //#region FinGL
         /*  #swagger.tags = ['Lançamentos dos Títulos']
-            #swagger.summary = 'Cria novos lançamentos de título com base na estrutura passada no body.'
+            #swagger.summary = 'Cria novos lançamentos de título com base na estrutura passada no body. Titulo e tabela contábil são chaves estrangeiras, devem ser criadas antes.'
             #swagger.parameters['json'] = {
                 in: 'body',
                 description: 'Body de exemplo',
