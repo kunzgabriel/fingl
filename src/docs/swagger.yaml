@@ -20,7 +20,10 @@
   "paths": {
     "/clientes": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Retorna uma lista com todos os clientes",
         "description": "",
         "parameters": [],
         "responses": {
@@ -33,9 +36,79 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Cria novos clientes com base na estrutura passada no body",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "Fulano da Silva"
+                  },
+                  "cpfcnpj": {
+                    "type": "string",
+                    "example": "123.456.789-10"
+                  },
+                  "data_nascimento": {
+                    "type": "string",
+                    "example": "1900-01-01"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "example": "(49) 3333-3333"
+                  },
+                  "celular": {
+                    "type": "string",
+                    "example": "(49) 98888-9999"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "seuemail@teste.com"
+                  },
+                  "endereco": {
+                    "type": "string",
+                    "example": "Rua das Ruas"
+                  },
+                  "bairro": {
+                    "type": "string",
+                    "example": "Bairro dos Bairros"
+                  },
+                  "numero": {
+                    "type": "number",
+                    "example": 123
+                  },
+                  "complemento": {
+                    "type": "string",
+                    "example": "Complemento dos Complementos"
+                  },
+                  "cep": {
+                    "type": "string",
+                    "example": "00000-000"
+                  },
+                  "municipio": {
+                    "type": "string",
+                    "example": "Pinhalzinho"
+                  },
+                  "uf": {
+                    "type": "string",
+                    "example": "SC"
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -46,9 +119,32 @@
         }
       },
       "patch": {
-        "tags": [],
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Atualiza apenas os dados alterados do cliente com base nas informações do body. Id é obrigatorio.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "Ciclano da Silveira"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -61,7 +157,10 @@
     },
     "/clientes/{id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Retorna o cliente com base no id passado por parametro",
         "description": "",
         "parameters": [
           {
@@ -81,7 +180,10 @@
         }
       },
       "delete": {
-        "tags": [],
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Deleta o cliente com base no id passado por parâmetro",
         "description": "",
         "parameters": [
           {
@@ -103,7 +205,10 @@
     },
     "/contas": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Retorna uma lista com todas as contas",
         "description": "",
         "parameters": [],
         "responses": {
@@ -116,9 +221,35 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Cria novas contas com base na estrutura passada no body",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "descricao": {
+                    "type": "string",
+                    "example": "Sicoob"
+                  },
+                  "saldo": {
+                    "type": "number",
+                    "example": 123.52
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -129,9 +260,32 @@
         }
       },
       "patch": {
-        "tags": [],
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Atualiza apenas os dados alterados da conta com base nas informações do body. Id é obrigatorio.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "saldo": {
+                  "type": "number",
+                  "example": 6000.62
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -144,7 +298,10 @@
     },
     "/contas/{id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Retorna a conta com base no id passado por parametro",
         "description": "",
         "parameters": [
           {
@@ -164,7 +321,10 @@
         }
       },
       "delete": {
-        "tags": [],
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Deleta a conta com base no id passado por parâmetro",
         "description": "",
         "parameters": [
           {
@@ -186,7 +346,10 @@
     },
     "/fornecedores": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Fornecedores"
+        ],
+        "summary": "Retorna uma lista com todos os fornecedores",
         "description": "",
         "parameters": [],
         "responses": {
@@ -199,9 +362,79 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "Fornecedores"
+        ],
+        "summary": "Cria novos fornecedores com base na estrutura passada no body",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "Fulano da Silva"
+                  },
+                  "cpfcnpj": {
+                    "type": "string",
+                    "example": "12.345.678/0009-10"
+                  },
+                  "data_nascimento": {
+                    "type": "string",
+                    "example": "1900-01-01"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "example": "(49) 3333-3333"
+                  },
+                  "celular": {
+                    "type": "string",
+                    "example": "(49) 98888-9999"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "seuemail@teste.com"
+                  },
+                  "endereco": {
+                    "type": "string",
+                    "example": "Rua das Ruas"
+                  },
+                  "bairro": {
+                    "type": "string",
+                    "example": "Bairro dos Bairros"
+                  },
+                  "numero": {
+                    "type": "number",
+                    "example": 123
+                  },
+                  "complemento": {
+                    "type": "string",
+                    "example": "Complemento dos Complementos"
+                  },
+                  "cep": {
+                    "type": "string",
+                    "example": "00000-000"
+                  },
+                  "municipio": {
+                    "type": "string",
+                    "example": "Pinhalzinho"
+                  },
+                  "uf": {
+                    "type": "string",
+                    "example": "SC"
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -212,9 +445,32 @@
         }
       },
       "patch": {
-        "tags": [],
+        "tags": [
+          "Fornecedores"
+        ],
+        "summary": "Atualiza apenas os dados alterados do fornecedor com base nas informações do body. Id é obrigatorio.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "Ciclano da Silveira"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -227,7 +483,10 @@
     },
     "/fornecedores/{id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Fornecedores"
+        ],
+        "summary": "Retorna o fornecedor com base no id passado por parametro",
         "description": "",
         "parameters": [
           {
@@ -247,7 +506,10 @@
         }
       },
       "delete": {
-        "tags": [],
+        "tags": [
+          "Fornecedores"
+        ],
+        "summary": "Deleta o fornecedor com base no id passado por parâmetro",
         "description": "",
         "parameters": [
           {
@@ -269,7 +531,10 @@
     },
     "/tabelaContabil": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Tabelas Contábeis"
+        ],
+        "summary": "Retorna uma lista com todas as tabelas contábeis",
         "description": "",
         "parameters": [],
         "responses": {
@@ -282,9 +547,39 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "Tabelas Contábeis"
+        ],
+        "summary": "Cria novas tabelas contábeis com base na estrutura passada no body.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "descricao": {
+                    "type": "string",
+                    "example": "Transferencia Sicoob para Caixa"
+                  },
+                  "contaCredito": {
+                    "type": "number",
+                    "example": 2
+                  },
+                  "contaDebito": {
+                    "type": "number",
+                    "example": 1
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -295,9 +590,32 @@
         }
       },
       "patch": {
-        "tags": [],
+        "tags": [
+          "Tabelas Contábeis"
+        ],
+        "summary": "Atualiza apenas os dados alterados da tabela contábil com base nas informações do body. Id é obrigatorio.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 2
+                },
+                "conta_credito": {
+                  "type": "number",
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -310,7 +628,10 @@
     },
     "/tabelaContabil/{id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Tabelas Contábeis"
+        ],
+        "summary": "Retorna a tabela contábil com base no id passado por parametro",
         "description": "",
         "parameters": [
           {
@@ -330,7 +651,10 @@
         }
       },
       "delete": {
-        "tags": [],
+        "tags": [
+          "Tabelas Contábeis"
+        ],
+        "summary": "Deleta a tabela contábil com base no id passado por parâmetro",
         "description": "",
         "parameters": [
           {
@@ -352,7 +676,10 @@
     },
     "/titulos": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Títulos"
+        ],
+        "summary": "Retorna uma lista com todos os títulos",
         "description": "",
         "parameters": [],
         "responses": {
@@ -365,9 +692,79 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "Títulos"
+        ],
+        "summary": "Cria novos títulos com base na estrutura passada no body.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "tipo": {
+                    "type": "string",
+                    "example": "R"
+                  },
+                  "tabela_contabil": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "titulo": {
+                    "type": "string",
+                    "example": "titulo-teste-2"
+                  },
+                  "cliente": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "fornecedor": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "emissao": {
+                    "type": "string",
+                    "example": "2020-02-01"
+                  },
+                  "valor": {
+                    "type": "number",
+                    "example": 150
+                  },
+                  "vencimento": {
+                    "type": "string",
+                    "example": "2020-02-10"
+                  },
+                  "pagamento": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "valor_pago": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "observacao": {
+                    "type": "string",
+                    "example": "qualquer coisa pra receber"
+                  },
+                  "desconto": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "multa": {
+                    "type": "number",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -378,9 +775,32 @@
         }
       },
       "patch": {
-        "tags": [],
+        "tags": [
+          "Títulos"
+        ],
+        "summary": "Atualiza apenas os dados alterados do título com base nas informações do body. Id é obrigatorio.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "multa": {
+                  "type": "number",
+                  "example": 12
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -393,7 +813,10 @@
     },
     "/titulos/{id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Títulos"
+        ],
+        "summary": "Retorna o título com base no id passado por parametro",
         "description": "",
         "parameters": [
           {
@@ -413,7 +836,10 @@
         }
       },
       "delete": {
-        "tags": [],
+        "tags": [
+          "Títulos"
+        ],
+        "summary": "Deleta o título com base no id passado por parâmetro",
         "description": "",
         "parameters": [
           {
@@ -435,7 +861,10 @@
     },
     "/titulosLancamentos": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Lançamentos dos Títulos"
+        ],
+        "summary": "Retorna uma lista com todos os lançamentos dos títulos",
         "description": "",
         "parameters": [],
         "responses": {
@@ -448,9 +877,43 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "Lançamentos dos Títulos"
+        ],
+        "summary": "Cria novos lançamentos de título com base na estrutura passada no body.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "valor": {
+                    "type": "number",
+                    "example": 150
+                  },
+                  "tabela_contabil": {
+                    "type": "number",
+                    "example": 2
+                  },
+                  "observacao": {
+                    "type": "string",
+                    "example": "estorno da conta 1"
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -461,9 +924,32 @@
         }
       },
       "patch": {
-        "tags": [],
+        "tags": [
+          "Lançamentos dos Títulos"
+        ],
+        "summary": "Atualiza apenas os dados alterados do lançamento de título com base nas informações do body. Id é obrigatorio.",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Body de exemplo",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "valor": {
+                  "type": "number",
+                  "example": 120
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Criado"
@@ -476,7 +962,10 @@
     },
     "/titulosLancamentos/{id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Lançamentos dos Títulos"
+        ],
+        "summary": "Retorna o lançamento de título com base no id passado por parametro",
         "description": "",
         "parameters": [
           {
@@ -496,7 +985,10 @@
         }
       },
       "delete": {
-        "tags": [],
+        "tags": [
+          "Lançamentos dos Títulos"
+        ],
+        "summary": "Deleta o lançamento de título com base no id passado por parâmetro",
         "description": "",
         "parameters": [
           {
